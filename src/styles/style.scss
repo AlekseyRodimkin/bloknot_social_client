@@ -12,19 +12,24 @@
 	color: white;
 }
 
+body {
+	background: #222222;
+}
+
 button,
 input {
 	cursor: pointer;
 }
 
 $blue: #0275b1;
-$black: #181818;
-$grey: #8293ae;
+$black: #0b0b0b;
+$dark: #222222;
 $red: #f5222d;
-$white: #ffffff;
-$purple: #4c5171;
-$purple_lite: #7f84a0;
-$purple_dark: #36394d;
+$yellow: #f7ff05;
+
+$purp_lite: #c8c9da;
+$purp_base: #4c5171;
+$purp_dark: #2a2e3d;
 
 @mixin text($fw, $lh, $fz, $col) {
 	font-weight: $fw;
@@ -34,13 +39,20 @@ $purple_dark: #36394d;
 	font-size: $fz;
 	color: $col;
 }
-
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
 
+.content {
+	padding: 20px 0 100px;
+	display: flex;
+	column-gap: 30px;
+}
+
 @import 'header';
 @import 'switchLang';
 @import 'register';
+@import 'aside';
+@import 'friends';

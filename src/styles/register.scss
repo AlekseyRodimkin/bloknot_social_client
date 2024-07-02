@@ -1,17 +1,19 @@
 .register {
 	height: 100vh;
-	background: #222222;
-	background: linear-gradient(150.15deg, $purple_lite 10.12%, $white 100.22%);
+	background: $dark;
+	// background: linear-gradient(150.15deg, #222222 10.12%, #ffffff 100.22%);
+	background: $purp_base;
+
 	padding: 30px 0;
 	&__title {
 		margin-bottom: 20px;
 		text-align: center;
 		font-weight: 900;
-		background: linear-gradient(
-			91.92deg,
-			#ffffff 29.24%,
-			rgba(176, 250, 255, 0) 131.64%
-		);
+		// background: linear-gradient(
+		// 	91.92deg,
+		// 	#ffffff 29.24%,
+		// 	rgba(176, 250, 255, 0) 131.64%
+		background: $purp_lite;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -28,11 +30,11 @@
 			margin-bottom: 5px;
 			font-weight: 600;
 			font-size: 16px;
-			background: linear-gradient(
-				100.92deg,
-				#dfdde1 20.24%,
-				rgba(176, 250, 255, 0) 100.64%
-			);
+			// background: linear-gradient(
+			// 	100.92deg,
+			// 	#dfdde1 20.24%,
+			// 	rgba(176, 250, 255, 0) 100.64%
+			background: white;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
@@ -85,25 +87,26 @@
 		}
 		/* стили при наведении курсора на радио */
 		&-input:not(:disabled):not(:checked) + label:hover::before {
-			border-color: #b3d7ff;
+			border-color: white;
 		}
 		/* стили для активной радиокнопки (при нажатии на неё) */
 		&-input:not(:disabled):active + label::before {
-			background-color: #b3d7ff;
-			border-color: #b3d7ff;
+			background-color: white;
+			border-color: white;
 		}
 		/* стили для радиокнопки, находящейся в фокусе */
-		&-input:focus + label::before {
-			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-		}
+		// &-input:focus + label::before {
+		// box-shadow: 0 0 0 0.2rem rgb(247, 251, 255);
+		// }
+
 		/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
 		&-input:focus:not(:checked) + label::before {
-			border-color: #80bdff;
+			border-color: white;
 		}
 		/* стили для радиокнопки, находящейся в состоянии checked */
 		&-input:checked + label::before {
-			border-color: $blue;
-			background-color: $blue;
+			border-color: $purp_lite;
+			background-color: $purp_lite;
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 		}
 		/* стили для радиокнопки, находящейся в состоянии disabled */
@@ -117,9 +120,9 @@
 		}
 	}
 	&__field {
-		color: $purple_dark;
+		color: #222222;
 		// background: rgba(7, 88, 92, 0.1);
-		background: $white;
+		background: #ffffff;
 		box-shadow: 0px 4px 41px rgba(0, 0, 0, 0.13);
 		backdrop-filter: blur(2px);
 		border-radius: 4px;
@@ -140,20 +143,21 @@
 		flex-wrap: wrap;
 		flex-direction: column;
 		// background: rgba(255, 255, 255, 0.1);
-		background: $purple_dark;
+		background: #222222;
 		box-shadow: 0px 4px 41px rgba(0, 0, 0, 0.13);
 		backdrop-filter: blur(2px);
 		border-radius: 8px;
 		padding: 30px 20px;
 	}
 	&__btn {
-		background: $grey;
+		background: $purp_dark;
 		font-weight: 700;
 		font-size: 15px;
-		box-shadow: 0px 2px 8px $white;
+		box-shadow: 0px 2px 5px $purp_lite;
 		border-radius: 12px;
 		padding: 10px;
 		color: #ffffff;
+
 		justify-content: center;
 		margin: 0 auto;
 		width: 200px;
