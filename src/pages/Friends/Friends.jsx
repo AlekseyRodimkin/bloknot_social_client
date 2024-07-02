@@ -32,7 +32,7 @@ const Friends = () => {
 									<a href='' className='friends__card-link'>
 										Ivan Ivanov
 									</a>
-									<p className='friends__card-friends'>нет общих друзей</p>
+									<p className='friends__card-friends'>Нет общих друзей</p>
 								</div>
 								<button className='friends__card-btn'>
 									<RiUserAddLine />
