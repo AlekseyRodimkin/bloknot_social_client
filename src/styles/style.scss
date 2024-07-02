@@ -19,8 +19,12 @@ input {
 
 $blue: #0275b1;
 $black: #181818;
-$grey: #8c8c8c;
+$grey: #8293ae;
 $red: #f5222d;
+$white: #ffffff;
+$purple: #4c5171;
+$purple_lite: #7f84a0;
+$purple_dark: #36394d;
 
 @mixin text($fw, $lh, $fz, $col) {
 	font-weight: $fw;
@@ -39,3 +43,4 @@ $red: #f5222d;
 
 @import 'header';
 @import 'switchLang';
+@import 'register';
