@@ -2,8 +2,9 @@
 	background: $dark;
 	// background: linear-gradient(150.15deg, #222222 10.12%, #ffffff 100.22%);
 	background: $purp_base;
-
 	padding: 30px 0;
+	height: 100vh;
+
 	&__title {
 		margin-bottom: 20px;
 		text-align: center;

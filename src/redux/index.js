@@ -13,11 +13,13 @@ import {
 	REGISTER,
 } from 'redux-persist'
 import findUsers from './reducers/findUsers'
+import notification from './reducers/notification'
 
 const rootReducer = combineReducers({
 	products: products,
 	user,
 	findUsers,
+	notification,
 })
 
 const persistConfig = {
