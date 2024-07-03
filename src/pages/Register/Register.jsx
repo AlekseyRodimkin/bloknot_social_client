@@ -3,11 +3,11 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { BiErrorCircle } from 'react-icons/bi'
 import InputMask from 'react-input-mask'
-import DownLoadBtn from '../../components/DownloadBtn/DownloadBtn'
-import axios from '../../utils/axios'
 import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import DownLoadBtn from '../../components/DownloadBtn/DownloadBtn'
 import { fillUser } from '../../redux/reducers/user'
-import { useNavigate } from 'react-router-dom'
+import axios from '../../utils/axios'
 
 const Friends = () => {
 	const { t } = useTranslation()
@@ -23,7 +23,6 @@ const Friends = () => {
 		handleSubmit,
 		getValues,
 		formState: { errors },
-		reset,
 	} = useForm({ mode: 'onTouched' })
 
 	const registerUser = data => {
@@ -114,7 +113,7 @@ const Friends = () => {
 						</div>
 
 						<label className='register__label'>
-							<h2 className='register__label-title'>{t('form.login')}</h2>
+							<h2 className='register__label-title'>{t('form.labelLogin')}</h2>
 							<input
 								type='text'
 								style={{ border: errors.login && '#f5222d 1px solid' }}
@@ -132,7 +131,7 @@ const Friends = () => {
 										value: 3,
 									},
 								})}
-								placeholder={t('form.login')}
+								placeholder={t('form.labelLogin')}
 								className='register__field'
 							/>
 							<span className='register__error'>
@@ -143,10 +142,10 @@ const Friends = () => {
 							</span>
 						</label>
 						<label className='register__label'>
-							<h2 className='register__label-title'>{t('form.phone')}</h2>
+							<h2 className='register__label-title'>{t('form.labelPhone')}</h2>
 							<InputMask
 								style={{ border: errors.phone && '#f5222d 1px solid' }}
-								mask={`+\\9\\96(999)99-99-99`}
+								mask={`+\\7\\(\\999)999-99-99`}
 								type='tel'
 								{...register('phone', {
 									required: {
@@ -154,12 +153,12 @@ const Friends = () => {
 										message: 'Это поле обязательное',
 									},
 									pattern: {
-										value: /^\+996\(\d{3}\)\d{2}-\d{2}-\d{2}$/,
+										value: /^\+7\(\d{3}\)\d{3}-\d{2}-\d{2}$/,
 										message: 'Заполните номер телефона',
 									},
 								})}
 								className='register__field'
-								placeholder={t('form.phone')}
+								placeholder={t('form.labelPhone')}
 							/>
 							<span className='register__error'>
 								{errors.phone && <BiErrorCircle fill='#f5222d' />}
@@ -170,7 +169,9 @@ const Friends = () => {
 						</label>
 						<div className='register__block'>
 							<label className='register__label'>
-								<h2 className='register__label-title'>{t('form.password')}</h2>
+								<h2 className='register__label-title'>
+									{t('form.labelPassword')}
+								</h2>
 								<input
 									type='password'
 									className='register__field'
@@ -193,7 +194,7 @@ const Friends = () => {
 											value: /(?=.*[0-9])(?=.*[a-z]){6,}/g,
 										},
 									})}
-									placeholder={t('form.password')}
+									placeholder={t('form.labelPassword')}
 								/>
 								<span className='register__error'>
 									{errors.password && <BiErrorCircle fill='#f5222d' />}
@@ -203,10 +204,13 @@ const Friends = () => {
 								</span>
 							</label>
 							<label className='register__label'>
-								<h2 className='register__label-title'>Password again</h2>
+								<h2 className='register__label-title'>
+									{t('form.labelPasswordAgain')}
+								</h2>
 								<input
 									type='password'
 									className='register__field'
+									placeholder={t('form.labelPasswordAgain')}
 									style={{
 										border: errors.passwordAgain && '#f5222d 1px solid',
 									}}
@@ -232,7 +236,9 @@ const Friends = () => {
 						</div>
 						<div className='register__block'>
 							<label className='register__label'>
-								<h2 className='register__label-title'>Gender</h2>
+								<h2 className='register__label-title'>
+									{t('form.labelGender')}
+								</h2>
 								<div className='register__gender'>
 									<div className='register__gender-item'>
 										<input
@@ -268,11 +274,11 @@ const Friends = () => {
 							</label>
 						</div>
 
-						<DownLoadBtn images={images} setImages={setImages} />
+						<DownLoadBtn images={images} setImages={setImages} t={t} />
 
 						<div className='register__block'>
 							<label className='register__label'>
-								<h2 className='register__label-title'>Birthday</h2>
+								<h2 className='register__label-title'>{t('form.labelAge')}</h2>
 								<input
 									type='date'
 									{...register('birthday', {
@@ -292,7 +298,7 @@ const Friends = () => {
 							</label>
 
 							<label className='register__label'>
-								<h2 className='register__label-title'>City</h2>
+								<h2 className='register__label-title'>{t('form.labelCity')}</h2>
 								<input
 									type='text'
 									{...register('city', {
@@ -302,6 +308,7 @@ const Friends = () => {
 										border: errors.city && '#f5222d 1px solid',
 									}}
 									className='register__field'
+									placeholder={t('form.labelCity')}
 								/>
 								<span className='register__error'>
 									{errors.city && <BiErrorCircle fill='#f5222d' />}
@@ -312,8 +319,11 @@ const Friends = () => {
 							</label>
 						</div>
 						<button className='register__btn' type='submit'>
-							Sign up
+							{t('form.btn1')}
 						</button>
+						<Link className='register__question' to='/login'>
+							{t('form.question1')}
+						</Link>
 					</form>
 				</div>
 			</div>

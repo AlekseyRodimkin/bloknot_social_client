@@ -1,5 +1,37 @@
 .header {
 	background: $purp_base;
+
+	&__popover {
+		background: $purp_base;
+		padding: 20px;
+		&-top {
+			display: flex;
+			column-gap: 10px;
+			align-items: center;
+			padding: 8px 5px;
+			border-radius: 10px;
+			background: $purp_dark;
+		}
+		&-list {
+			display: flex;
+			flex-direction: column;
+			row-gap: 7px;
+			margin-top: 10px;
+		}
+		&-item {
+			padding: 5px;
+			display: flex;
+			column-gap: 10px;
+			align-items: center;
+			svg {
+				font-size: 20px;
+			}
+			&:not(:nth-child(3)):hover {
+				cursor: pointer;
+				background: $purp_dark;
+			}
+		}
+	}
 	&__nav {
 		display: flex;
 		justify-content: space-between;

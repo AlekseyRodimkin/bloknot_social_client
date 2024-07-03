@@ -15,6 +15,10 @@
 		"labelGender": "Gender",
 		"labelCity": "City",
 		"btn1": "Sign up",
-		"btn2": "Sign in"
+		"btn2": "Sign in",
+		"question1": "Do you already have an account?",
+		"question2": "Don't have an account?",
+		"photoAddBtn": "Upload picture",
+		"photoDelBtn": "Delete picture"
 	}
 }
