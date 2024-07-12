@@ -7,7 +7,7 @@ import axios from '../utils/axios'
 import { fillUser } from '../redux/reducers/user'
 
 const Layout = () => {
-	const { user } = useSelector(store => store.user)
+	const { user } = useSelector(store => store.persistedReducer.user)
 	const dispatch = useDispatch()
 
 	useEffect(() => {

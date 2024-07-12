@@ -21,10 +21,11 @@ import {
 	PopoverBody,
 	Icon,
 } from '@chakra-ui/react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { logOutUser } from '../../redux/reducers/user'
 
 const Header = () => {
+	const { user } = useSelector(store => store.persistedReducer.user)
 	const dispatch = useDispatch()
 
 	return (
@@ -38,13 +39,19 @@ const Header = () => {
 						<HeaderSearch />
 					</div>
 					<div className='header__right'>
-						<span className='header__notif'>
+						<Link to='/notifications' className='header__notif'>
 							<IoMdNotifications />
-						</span>
+						</Link>
+						<Link to='/requests' className='header__notif'>
+							<IoMdNotifications />
+						</Link>{' '}
 						<Popover placement='top-end' isLazy>
 							<PopoverTrigger>
 								<Button className='header__user'>
-									<Avatar name='Alexey Rodimkin' src='' />
+									<Avatar
+										name={`${user.name} ${user.surname}`}
+										src={`${process.env.REACT_APP_URL}${user.image}`}
+									/>
 									<span className='header__user-icon'>
 										<BiChevronsDown />
 									</span>
@@ -57,14 +64,14 @@ const Header = () => {
 									<div className='header__popover-top'>
 										<Avatar
 											className='header__popover-img'
-											name='Alexey Rodimkin'
-											src=''
+											name={`${user.name} ${user.surname}`}
+											src={`${process.env.REACT_APP_URL}${user.image}`}
 										/>
 										<div>
 											<h3 className='header__popover-title'>
-												Aleksei Rodimkin
+												{user.name} {user.surname}
 											</h3>
-											<p className='header__popover-num'>+7(999)999-9999</p>
+											<p className='header__popover-num'>{user.phone}</p>
 										</div>
 									</div>
 									<ul className='header__popover-list'>

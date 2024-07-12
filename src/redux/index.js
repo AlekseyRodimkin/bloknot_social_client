@@ -14,6 +14,7 @@ import {
 } from 'redux-persist'
 import findUsers from './reducers/findUsers'
 import notification from './reducers/notification'
+import { requestsSlice } from './reducers/requests'
 
 const rootReducer = combineReducers({
 	products: products,
@@ -30,13 +31,16 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 const store = configureStore({
-	reducer: persistedReducer,
+	reducer: {
+		persistedReducer,
+		[requestsSlice.reducerPath]: requestsSlice.reducer,
+	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({
 			serializableCheck: {
 				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
 			},
-		}),
+		}).concat(requestsSlice.middleware),
 })
 
 export const persistor = persistStore(store)

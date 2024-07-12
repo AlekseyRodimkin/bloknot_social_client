@@ -1,5 +1,6 @@
 .header {
 	background: $purp_base;
+	height: 50px;
 
 	&__popover {
 		background: $purp_base;
@@ -58,7 +59,7 @@
 		}
 		&-field {
 			width: 230px;
-			background: #36394d;
+			background: $purp_dark;
 			border-radius: 8px;
 			height: 32px;
 			border: none;
