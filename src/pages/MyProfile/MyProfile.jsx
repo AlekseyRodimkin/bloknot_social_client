@@ -20,7 +20,7 @@ const MyProfile = () => {
 						/>
 					</div>
 					<div className='profile__info-user'>
-						<h3 className='profile__info-name'>Ivan Ivanov</h3>
+						<h3 className='profile__info-name'>Aleksey Rodimkin</h3>
 						<a href='' className='profile__info-about'>
 							Enter information about yourself <span></span>
 						</a>

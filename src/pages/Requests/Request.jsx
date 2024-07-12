@@ -6,9 +6,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Image } from '@chakra-ui/react'
 import { fillUser } from '../../redux/reducers/user'
+import { userSelector } from '../../redux/reselect'
 
 const Request = () => {
-	const { user } = useSelector(store => store.persistedReducer.user)
+	const { user } = useSelector(userSelector)
 
 	const dispatch = useDispatch()
 

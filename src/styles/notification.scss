@@ -1,9 +1,9 @@
 .notification {
-	background: #181818 !important;
+	background: dark !important;
 	min-height: 100vh;
 	padding-top: 50px;
 	&__content {
-		background: #222222;
+		background: $dark;
 		width: 100%;
 		max-width: 700px;
 		padding: 20px;
